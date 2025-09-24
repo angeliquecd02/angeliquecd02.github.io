@@ -243,3 +243,109 @@
     }
   }
 }
+
+/* Portfolio inline layout */
+.portfolio-inline {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 0.5rem;
+
+  .portfolio-inline__media {
+    flex: 0 0 140px;
+
+    img {
+      display: block;
+      max-width: 140px;
+      height: auto;
+      border-radius: $border-radius;
+    }
+  }
+
+  .portfolio-inline__body {
+    flex: 1 1 auto;
+  }
+}
+
+@include breakpoint($small) {
+  .portfolio-inline {
+    gap: 1.25rem;
+
+    .portfolio-inline__media {
+      flex-basis: 160px;
+      img { max-width: 160px; }
+    }
+  }
+}
+
+@include breakpoint($medium) {
+  .portfolio-inline {
+    .portfolio-inline__media {
+      flex-basis: 180px;
+      img { max-width: 180px; }
+    }
+  }
+}
+
+
+/* Portfolio items - reduce right padding */
+.archive__item[data-collection="portfolio"] {
+  .list__item {
+    padding-right: 0;
+  }
+}
+
+/* Alternative approach - target portfolio items directly */
+.archive__item:has(.portfolio-inline) {
+  .list__item {
+    padding-right: 0;
+  }
+}
+
+/* Fallback - reduce padding for all list items on portfolio pages */
+.page--portfolio .list__item {
+  padding-right: 1rem;
+}
+
+@include breakpoint($medium) {
+  .page--portfolio .list__item {
+    padding-right: 1rem;
+  }
+}
+
+@include breakpoint($large) {
+  .page--portfolio .list__item {
+    padding-right: 1rem;
+  }
+}
+
+@include breakpoint($x-large) {
+  .page--portfolio .list__item {
+    padding-right: 1rem;
+  }
+}
+
+
+/* More specific portfolio padding fix */
+.archive .list__item {
+  padding-right: 1rem !important;
+}
+
+@include breakpoint($medium) {
+  .archive .list__item {
+    padding-right: 1rem !important;
+  }
+}
+
+@include breakpoint($large) {
+  .archive .list__item {
+    padding-right: 1rem !important;
+  }
+}
+
+@include breakpoint($x-large) {
+  .archive .list__item {
+    padding-right: 1rem !important;
+  }
+}
+
