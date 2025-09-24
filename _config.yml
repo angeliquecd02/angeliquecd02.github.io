@@ -21,11 +21,11 @@ repository               : "angeliquecd02.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.png"
+  avatar           : "profile_pic.JPG"
   name             : "Angelique Charles-Davis"
-  pronouns         : "she/her"  
-  bio              : "M.S. Student in Computer Science at Stanford University"
-  location         : "Stanford, CA"
+  pronouns         : # optional
+  bio              : "Stanford alumn | SWE at Abridge AI"
+  location         : "New York, NY"
   employer         : #"Red Brick University"
   uri              : # URL
   email            : "angelcd at stanford dot edu" 
@@ -57,7 +57,7 @@ author:
   keybase          : # Username
   instagram        : # Username
   lastfm           : # Username
-  linkedin         : # Username
+  linkedin         : angeliquecd02
   mastodon         : # URL
   medium           : # URL
   pinterest        : # Username
@@ -223,6 +223,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  news:
+    output: true
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
@@ -280,6 +283,14 @@ defaults:
       layout: talk
       author_profile: true
       share: true
+  # _news
+  - scope:
+      path: ""
+      type: news
+    values:
+      layout: single
+      author_profile: true
+      share: false
 
 
 # Sass/SCSS
